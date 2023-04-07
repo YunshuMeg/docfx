@@ -1,0 +1,45 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "src/**.cs"
+          ]
+        }
+      ],
+      "dest": "api",
+      "includePrivateMembers": true,
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false,
+      "memberLayout": "separatePages"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "api/**.yml",
+          "api/index.md",
+          "*.md",
+          "toc.yml"
+        ],
+        "exclude": [
+          "README.md"
+        ]
+      }
+    ],
+    "dest": "_site",
+    "globalMetadataFiles": [],
+    "fileMetadataFiles": [],
+    "template": [
+      "default",
+      "modern"
+    ],
+    "postProcessors": [],
+    "keepFileLink": false,
+    "cleanupCacheHistory": false,
+    "disableGitFeatures": false,
+    "exportViewModel": true
+  }
+}

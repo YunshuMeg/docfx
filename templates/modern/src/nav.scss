@@ -1,0 +1,91 @@
+/**
+ * Copyright (c) Microsoft Corporation. All Rights Reserved.
+ * Licensed under the MIT License. See License.txt in the project root for license information.
+*/
+
+.navbar {
+  padding: 0;
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  form {
+    align-items: center;
+
+    >i.bi {
+      position: relative;
+      left: 1.8rem;
+      opacity: .5;
+    }
+
+    >input {
+      padding-left: 2.5rem;
+    }
+  }
+}
+
+.breadcrumb {
+  font-size: 14px;
+
+  a {
+    @include underline-on-hover;
+  }
+}
+
+.affix {
+  font-size: 14px;
+
+  h5 {
+    display: inline-block;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 1em 0 .5em;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  h6 {
+    font-size: 14px;
+  }
+
+  ul {
+    flex-direction: column;
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+
+    h6 {
+      margin-top: 1rem;
+    }
+
+    li {
+      margin: .4rem 0;
+
+      a {
+        @include underline-on-hover;
+      }
+    }
+  }
+}
+
+.contribution {
+  margin-top: 2rem;
+
+  a.edit-link {
+    @include underline-on-hover;
+
+    &::before {
+      content: "\F4CA";
+      display: inline-block;
+
+      @include adjust-icon;
+    }
+  }
+}

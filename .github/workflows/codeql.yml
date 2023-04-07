@@ -1,0 +1,35 @@
+name: codeql
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 0 * * 0'
+jobs:
+  codeql:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: |
+          6.x
+          7.x
+
+    - uses: github/codeql-action/init@v2
+      with:
+        languages: ['csharp', 'javascript']
+
+    - run: |
+        npm install
+        npm run build
+      working-directory: templates
+
+    - run: dotnet build -c Release
+
+    - uses: github/codeql-action/analyze@v2

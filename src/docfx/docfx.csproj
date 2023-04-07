@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <PackAsTool>true</PackAsTool>
+    <RollForward>Major</RollForward>
+    <Description>The docfx command line tool published as .NET tool</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="docfx.Snapshot.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.DocAsCode.App\Microsoft.DocAsCode.App.csproj" />
+    <ProjectReference Include="..\Microsoft.DocAsCode.Dotnet\Microsoft.DocAsCode.Dotnet.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser"/>
+  </ItemGroup>
+</Project>

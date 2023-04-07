@@ -1,0 +1,20 @@
+version: 2
+updates:
+- package-ecosystem: nuget
+  target-branch: main
+  directory: "/"
+  schedule:
+    interval: weekly
+- package-ecosystem: npm
+  target-branch: main
+  directory: "/templates"
+  schedule:
+    interval: weekly
+  ignore:
+     # Ignore default template dependency update due to missing tests
+  - dependency-name: '@default/*'
+- package-ecosystem: "github-actions"
+  directory: "/"
+  schedule: 
+    interval: weekly
+  target-branch: main
